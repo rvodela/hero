@@ -23,7 +23,7 @@ gem 'authlogic', git: 'git@github.com:ayb/authlogic.git', ref: 'e221212944b076fb
 gem "asset_sync",         '~> 1.1.0'
 gem 'awesome_nested_set', '~> 3.1.1'
 
-gem 'aws-sdk',        '~> 2.3.21'
+#gem 'aws-sdk',        '~> 2.3.21'
 gem 'bluecloth',      '~> 2.2.0'
 gem 'cancancan',      '~> 1.15.0'
 gem 'chronic'
@@ -61,6 +61,13 @@ gem 'will_paginate',   '~> 3.1.0'
 # gem 'zurb-foundation', '~> 4.3.2'
 gem 'foundation-rails', '6.2.3.0'
 
+
+#gem 'aws-sdk'
+gem 'paperclip-dropbox'
+
+
+
+
 group :production do
   # gem 'mysql2', '~> 0.4.4'
   gem 'pg'
@@ -83,11 +90,13 @@ group :development do
 end
 group :test, :development do
   gem 'byebug'
-  gem 'mysql2',   '~> 0.4.4'
+  gem 'sqlite3', '1.3.11'
   gem 'capybara', '~> 2.7.1'
   gem 'launchy'
   gem 'database_cleaner', "~> 1.2"
+  gem 'mysql2', '~> 0.3.10'
 end
+
 
 group :test do
   gem 'factory_girl',       "~> 4.5.0"
@@ -98,5 +107,10 @@ group :test do
   gem 'rspec-rails',        '~> 3.5'
   gem 'email_spec'
   gem "faker"
+  gem "autotest"
 
 end
+
+if RUBY_PLATFORM =~ /darwin/
+  # gem "autotest-fsevent", '~> 0.2.5'
+end 
